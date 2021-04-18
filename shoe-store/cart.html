@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+</head>
+<body>
+    <header>
+        <div class="home"><a href="">Home</a></div>
+        <div class="admin"><a href="">Admin</a></div>
+        <form id="form">
+            <input type="text" name="search" id="search" placeholder="Search..." autocomplete="off">
+        </form>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="number-products">0</span>
+        </div>
+    </header>
+
+    <div class="cart-detail">
+        <h1>YOUR BAG</h1>
+        <div class="item">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/63d57a97229c406d988aabac00e3aed7_9366/NMD_R1.V2_STAR_WARS_Mau_xanh_da_troi_FX9300_01_standard.jpg" alt="">
+            <div class="info">
+                <p class="name">Adidas</p>
+                <p class="price">$120</p>
+                <button class="delete">Remove</button>
+            </div>
+            <div class="interact">
+                <i class="fas fa-chevron-up"></i>
+                <div class="number">1</div>     
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="total">
+            <p class="total-text">Total</p>
+            <p class="total-price">$1000</p>
+        </div>
+        <div class="clear">
+            <button >CLEAR CART</button>
+        </div>    
+    </div>
+</body>
+</html>

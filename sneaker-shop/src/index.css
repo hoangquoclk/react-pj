@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap');
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --mainBlack: #222;
+  --lightBlack: #111;
+  --lightGray: #999999;
+  --searchBg: #f5f5f5;
+  --quote: rgb(177, 115, 0);
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(187, 183, 241);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 15% 15% 15%;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: var(--purple);
+}
+
+header .home a, header .admin a {
+  color: var(--searchBg);
+}
+
+header .cart {
+  position: relative;
+  cursor: pointer;
+}
+
+header .cart a .fa-shopping-cart {
+  font-size: 1.3rem;
+  color: #111;
+}
+
+header .cart a .number-products {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: chocolate;
+  line-height: 20px;
+  text-align: center;
+  color: var(--searchBg);
+}
+
+.search {
+  text-align: center;
+  margin: 20px auto;
+  width: 40%;
+}
+
+.search #search {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  border: none;
+  background: var(--searchBg);
+  color: var(--secondary);
+}
+
+.search #search:focus {
+  outline: none;
+}
+
+main {
+  width: 95%;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+main .sneaker {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  background: rgb(52, 51, 95);
+}
+
+main .sneaker img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  /* transition: ring 0.3s linear; */
+}
+
+main .sneaker img:hover {
+  animation: ring 1s linear;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+  75% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+main .sneaker .name {
+  color: var(--searchBg);
+  font-size: 1.3rem;
+  margin: 10px 0;
+  font-family: 'Satisfy', cursive;
+}
+
+main .sneaker .price {
+  color: var(--warning);
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  font-family: 'Great Vibes', cursive;
+}
+
+main .sneaker button {
+  width: 100px;
+  height: 50px;
+  background: rgb(255, 145, 71);
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'Antonio', sans-serif;
+}
+
+main .sneaker button:hover {
+  background: rgb(255, 195, 85);
+}
+
+main .sneaker a button {
+  color: #000;
+  font-family: 'Antonio', sans-serif;
+}
+
+.sneaker-detail {
+  width: 50%;
+  margin: 0px auto;
+  background: rgb(187, 183, 241);
+  text-align: center;
+}
+
+.sneaker-detail img {
+  width: 60%;
+}
+
+.sneaker-detail .name {
+  color: #ff0a0a;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: 600;
+  font-family: 'Satisfy', cursive;
+}
+
+.sneaker-detail .price, .sneaker-detail .quantity {
+  color: var(--mainBlack);
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+}
+
+.sneaker-detail .price span, .sneaker-detail .quantity span {
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.sneaker-detail button {
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 145, 71);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Antonio', sans-serif;
+}
+
+.sneaker-detail button:hover {
+  background: rgb(255, 195, 85);
+}
+
+.cart-detail {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.cart-detail h1 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.cart-detail .item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 50% 10%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  /* background: #d8d8d8; */
+}
+
+.cart-detail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-detail .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cart-detail .info .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 5px 0;
+  color: #00188c;
+  font-family: 'Satisfy', cursive;
+}
+
+.cart-detail .info .price {
+  margin: 5px;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(168, 2, 2);
+}
+
+.cart-detail .info .delete {
+  padding: 5px;
+  background: var(--primary);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+}
+
+.cart-detail .info .delete:hover {
+  background: var(--info);
+}
+
+.cart-detail .interact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.cart-detail .interact .total-price {
+  font-family: 'PT Serif', serif;
+  color: rgb(168, 2, 2);
+  font-weight: 600;
+}
+
+.cart-detail .interact .fas {
+  cursor: pointer;
+}
+
+.cart-detail .interact .fas:hover {
+  color: var(--warning);
+}
+
+.cart-detail .total {
+  padding: 0 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-detail .total .total-price {
+  font-family: 'PT Serif', serif;
+  color: rgb(75, 1, 1);
+  font-weight: 600;
+}
+
+.cart-detail .clear {
+  width: 100%;
+  text-align: center;
+}
+
+.cart-detail .clear button {
+  cursor: pointer;
+  padding: 10px;
+  width: 30%;
+  color: var(--danger);
+  border: .5px solid var(--danger);
+}
+
+.cart-detail .clear button:hover {
+  background: rgb(240, 159, 159);
+}
+
+.manage {
+  width: 95%;
+  margin: 50px auto;
+}
+
+.manage .add {
+  width: 100%;
+  background: rgb(255, 244, 244);
+  text-align: center;
+  padding: 30px 0;
+}
+
+.manage .add h1 {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+}
+
+.manage .add #form-add {
+  font-size: 1.2rem;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.manage .add #form-add input {
+  padding: 5px;
+  width: 300px;
+  margin: 10px;
+}
+
+.manage .add #form-add #btn-add {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  font-family: 'Antonio', sans-serif;
+  font-size: 1rem;
+}
+
+.manage .add #form-add #btn-add:hover {
+  background: rgb(246, 190, 190);
+}
+
+.manage .info {
+  width: 100%;
+  margin-top: 50px;
+  background: rgb(255, 244, 244);
+  padding: 30px 0;
+}
+
+.manage .info h1 {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+}
+
+.manage .info table {
+  width: 100%;
+}
+
+.manage .info table tr {
+  margin-top: 30px;
+  border: 1px solid black;
+}
+
+.manage .info table tr th {
+  font-size: 1.2rem;
+  color: var(--dark);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.manage .info table tr td input {
+  width: 90%;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.manage .info table tr td input#btn-edit, .manage .info table tr td input#btn-delete {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  cursor: pointer;
+  font-family: 'Antonio', sans-serif;
+}
+
+.manage .info table tr td input#btn-edit:hover, .manage .info table tr td input#btn-delete:hover {
+  background: rgb(246, 190, 190);
+}
+
+.loading {
+  width: 100%;
+  margin: 100px auto;
+  border: 16px solid transparent;
+  border-radius: 50%;
+  border-top: 16px solid rgb(255, 255, 255);
+  border-bottom: 16px solid rgb(0, 0, 0);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  box-shadow: 
+  0 0 10px #808080,
+  0 0 20px #808080,
+  0 0 30px #808080,
+  0 0 40px #808080,
+  0 0 50px #808080;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.error {
+  text-align: center;
+  font-size: 3rem;
+}

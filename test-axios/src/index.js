@@ -6,8 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: `https://605f2505e96e5c0017408466.mockapi.io/api/products`
-  // baseURL: `http://localhost:3004/products`
+  // baseURL: `https://605f2505e96e5c0017408466.mockapi.io/api/products`
+  baseURL: `http://localhost:3004/products`
 });
 
 class Axios extends Component {
@@ -20,88 +20,88 @@ class Axios extends Component {
     this.getProduct();
   }
 
-  // getProduct = async () => {
-  //   let data = await api.get('/').then(({data}) => data);
-      
-  //   this.setState({ products: data });
-  // }
-
   getProduct = async () => {
-    try {
-      let data = await axios({
-        method: "get",
-        url: "https://605f2505e96e5c0017408466.mockapi.io/api/products"
-      }).then(({data}) => data);
-      this.setState({products: data})
-    }
-    catch (err) {
-      console.log(err);
-    }
+    let data = await api.get('/').then(({data}) => data);
+      
+    this.setState({ products: data });
   }
 
-  // createProduct = async () => {
-  //   let res = await api.post('/', {
-  //     name: "Samsung X", price: 10000, status: true
-  //   });
-  //   console.log(res);
-  //   this.getProduct();
+  // getProduct = async () => {
+  //   try {
+  //     let data = await axios({
+  //       method: "get",
+  //       url: "https://605f2505e96e5c0017408466.mockapi.io/api/products"
+  //     }).then(({data}) => data);
+  //     this.setState({products: data})
+  //   }
+  //   catch (err) {
+  //     console.log(err);
+  //   }
   // }
-  
+
   createProduct = async () => {
-    try {
-      let data = await axios({
-        method: "post",
-        url: "https://605f2505e96e5c0017408466.mockapi.io/api/products",
-        data: {
-          name: "Samsung galaxy",
-          price: "10000",
-          status: "true"
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    let res = await api.post('/', {
+      name: "Samsung X", price: 10000, status: true
+    });
+    console.log(res);
     this.getProduct();
   }
-
-  // deleteProduct = async (id) => {
-  //   let data = await api.delete(`/${id}`);
+  
+  // createProduct = async () => {
+  //   try {
+  //     let data = await axios({
+  //       method: "post",
+  //       url: "https://605f2505e96e5c0017408466.mockapi.io/api/products",
+  //       data: {
+  //         name: "Samsung galaxy",
+  //         price: "10000",
+  //         status: "true"
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
   //   this.getProduct();
   // }
 
   deleteProduct = async (id) => {
-    try {
-      let data = await axios({
-        method: "delete",
-        url: `https://605f2505e96e5c0017408466.mockapi.io/api/products/${id}`
-      }).then(({data}) => data); 
-    } catch (error) {
-      console.log(error);
-    }
+    let data = await api.delete(`/${id}`);
     this.getProduct();
   }
 
-  // updateProduct = async (id, val) => {
-  //   await api.put(`/${id}`, {
-  //     name: val
-  //   });
+  // deleteProduct = async (id) => {
+  //   try {
+  //     let data = await axios({
+  //       method: "delete",
+  //       url: `https://605f2505e96e5c0017408466.mockapi.io/api/products/${id}`
+  //     }).then(({data}) => data); 
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
   //   this.getProduct();
   // }
 
   updateProduct = async (id, val) => {
-    try {
-      axios({
-        method: "put",
-        url: `https://605f2505e96e5c0017408466.mockapi.io/api/products/${id}`,
-        data: {
-          name: val
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    await api.put(`/${id}`, {
+      name: val
+    });
     this.getProduct();
   }
+
+  // updateProduct = async (id, val) => {
+  //   try {
+  //     axios({
+  //       method: "put",
+  //       url: `https://605f2505e96e5c0017408466.mockapi.io/api/products/${id}`,
+  //       data: {
+  //         name: val
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   this.getProduct();
+  // }
 
   render() {
     return (

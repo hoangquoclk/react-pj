@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+</head>
+<body>
+    <header>
+        <div class="home"><a href="">Home</a></div>
+        <div class="admin"><a href="">Admin</a></div>
+        <form id="form">
+            <input type="text" name="search" id="search" placeholder="Search..." autocomplete="off">
+        </form>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="number-products">0</span>
+        </div>
+    </header>
+
+    <div class="manage">
+        <div class="add">
+            <h1>Thêm sản phẩm</h1>
+            <form id="form-add">
+                <label for="name">Tên sản phẩm</label>
+                <input type="text" name="name" id="name" placeholder="Adidas ..." autocomplete="off">
+                <br>
+                <label for="image">Link hình sản phẩm</label>
+                <input type="text" name="image" id="image" placeholder="https:// ..." autocomplete="off">
+                <br>
+                <label for="price">Giá sản phẩm</label>
+                <input type="text" name="price" id="price" placeholder="$100" autocomplete="off">
+                <br>
+                <button id="btn-add">Thêm</button>
+            </form>
+        </div>
+
+        <div class="info">
+            <h1>Danh sách sản phẩm</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Giá sản phẩm</th>
+                        <th>Điểu chỉnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <form>
+                            <td>
+                                <input type="text" name="name-info" id="name-info" value="Adidas">
+                            </td>
+                            <td>
+                                <input type="text" name="image-info" id="image-info" value="https://...">
+                            </td>
+                            <td>
+                                <input type="text" name="price-info" id="price-info" value="$120">
+                            </td>
+                            <td>
+                                <input type="submit" value="Sửa" id="btn-edit">
+                                <input type="submit" value="Xóa" id="btn-delete">
+                            </td>
+                        </form>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
